@@ -1,3 +1,6 @@
+#Probar proyecto heroku
+https://farmacia-service.herokuapp.com/admin/
+
 # Heroku Django Starter Template
 
 An utterly fantastic project starter template for Django 1.11.
