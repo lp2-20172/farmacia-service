@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+
+    'core',
+    'catalogo',
 ]
 
 MIDDLEWARE = [
@@ -84,18 +87,20 @@ DATABASES = {
     }
 }
 
+DATABASESx = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dfpbi6etuppp4n',
+        'USER': 'zdsfnxsnixpepm',
+        'PASSWORD': '240158d9c5b8a0401e9c426c7c9b75c18797e1281e9437d3f8d13a4264b144b2',
+        'HOST': 'ec2-50-17-203-195.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -131,3 +136,5 @@ STATICFILES_DIRS = [
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+AUTH_USER_MODEL = 'core.User'
