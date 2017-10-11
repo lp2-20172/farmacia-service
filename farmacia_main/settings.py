@@ -80,19 +80,19 @@ WSGI_APPLICATION = 'farmacia_main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
+DATABASESx = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
-DATABASESx = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dfpbi6etuppp4n',
-        'USER': 'zdsfnxsnixpepm',
-        'PASSWORD': '240158d9c5b8a0401e9c426c7c9b75c18797e1281e9437d3f8d13a4264b144b2',
+        'NAME': 'd602v98adodveb',
+        'USER': 'zvniekgkwimtcd',
+        'PASSWORD': '762281c992fcfcb18e900440342d5774615115b3d667c048532a2708d2812399',
         'HOST': 'ec2-50-17-203-195.compute-1.amazonaws.com',
         'PORT': '5432',
     }
