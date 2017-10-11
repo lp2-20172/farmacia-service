@@ -4,7 +4,6 @@ from catalogo.models import UnidadMed
 from catalogo.models import Categoria
 from catalogo.models import Venta, ShoppingCart, Cliente
 from catalogo.models import Almacen
-from catalogo.models import Area
 from catalogo.models import Proveedor
 from catalogo.models import Compra
 from catalogo.models import DetalleCompra
@@ -15,9 +14,8 @@ admin.site.register(UnidadMed)
 admin.site.register(Categoria)
 admin.site.register(Cliente)
 admin.site.register(ShoppingCart)
-admin.site.register(Venta)
+
 admin.site.register(Almacen)
-admin.site.register(Area)
 admin.site.register(Proveedor)
 admin.site.register(DetalleCompra)
 
@@ -26,7 +24,7 @@ class ProductoAdmin(admin.ModelAdmin):
     """docstring for ProductoAdmin"""
     list_per_page = 2
     list_display = ("codigo", "nombre",
-                    "unidad_med_codigo", "categorias", "almacen_direccion", "area_direccion",)
+                    "unidad_med_codigo", "categorias", "almacen_direccion",)
     search_fields = ("codigo", "nombre",)
 
     def unidad_med_codigo(self, obj):
@@ -34,9 +32,6 @@ class ProductoAdmin(admin.ModelAdmin):
 
     def almacen_direccion(self, obj):
         return obj.almacen.direccion
-
-    def area_direccion(self, obj):
-        return obj.area.direccion
 
     def categorias(self, obj):
         return obj.categoria.all()
@@ -51,3 +46,12 @@ class CompraAdmin(admin.ModelAdmin):
     search_fields = ("nro_doc", "fecha",)
 
 admin.site.register(Compra, CompraAdmin)
+
+
+class VentaAdmin(admin.ModelAdmin):
+    """docstring for ProductoAdmin"""
+    list_per_page = 2
+    list_display = ("nro_doc", "fecha",)
+    search_fields = ("nro_doc", "fecha",)
+
+admin.site.register(Venta, VentaAdmin)
